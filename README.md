@@ -75,12 +75,12 @@ recorderManager.onError = (error) => {
 # 例子
 ```bash
 <template>
-	<div class="page-container">
-		<canvas class="wave" width="1000" height="200px" ref="wave"></canvas>
+ <div class="page-container">
+  <canvas class="wave" width="1000" height="200px" ref="wave"></canvas>
 
-		<button @click="start">开始</button>
-		<button @click="stop">结束</button>
-	</div>
+  <button @click="start">开始</button>
+  <button @click="stop">结束</button>
+ </div>
 </template>
 <script>
 import {
