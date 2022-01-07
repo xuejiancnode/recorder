@@ -4,14 +4,21 @@
 # 使用
 
 ## 下载代码库
-> clone https://github.com/xuejiancnode/recorder.git
+```bash
+clone https://github.com/xuejiancnode/recorder.git
+```
 
 ## 资源导入
-> import { GetRecorderManager } from './recorder'
+```bash
+import { GetRecorderManager } from './recorder'
+```
 
 ## 实例化
-> <canvas class="wave" width="1000" height="200px"></canvas>
-> const recorderManager = new GetRecorderManager(document.querySelector('.wave')) // 非必填
+```bash
+<canvas class="wave" width="1000" height="200px"></canvas>
+ // 非必填
+const recorderManager = new GetRecorderManager(document.querySelector('.wave'))
+```
 
 ## 事件
 ### onSuccess
@@ -19,9 +26,11 @@
 #### 参数
 result 授权状态
 
-> recorderManager.onSuccess = (result) => {
->   console.log('onSuccess', result);
-> }
+```bash
+recorderManager.onSuccess = (result) => {
+  console.log('onSuccess', result);
+}
+```
 
 
 ### onStart
@@ -29,19 +38,22 @@ result 授权状态
 #### 参数
 event 开始录制的状态
 
-> recorderManager.onStart = (event) => {
->   console.log('onStart', event);
-> }
-
+```bash
+recorderManager.onStart = (event) => {
+  console.log('onStart', event);
+}
+```
 
 ### onStop
 音频结束录制触发的事件
 #### 参数
 result 生成的文件及BlobURL
 
-> recorderManager.onStop = (result) => {
->   console.log('onStop', result);
-> }
+```bash
+recorderManager.onStop = (result) => {
+  console.log('onStop', result);
+}
+```
 
 
 ### onError
@@ -49,6 +61,8 @@ result 生成的文件及BlobURL
 #### 参数
 error 失败的状态及描述信息
 
-> recorderManager.onError = (error) => {
->   console.log('onError', error);
-> }
+```bash
+recorderManager.onError = (error) => {
+  console.log('onError', error);
+}
+```
