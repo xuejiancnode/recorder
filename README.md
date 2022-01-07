@@ -75,53 +75,54 @@ recorderManager.onError = (error) => {
 # 例子
 ```bash
 <template>
- <div class="page-container">
-  <canvas class="wave" width="1000" height="200px" ref="wave"></canvas>
+  <div class="page-container">
+    <canvas class="wave" width="1000" height="200px" ref="wave"></canvas>
 
-  <button @click="start">开始</button>
-  <button @click="stop">结束</button>
- </div>
+    <button @click="start">开始</button>
+    <button @click="stop">结束</button>
+  </div>
 </template>
-<script>
-import {
-  GetRecorderManager
-} from '@/utils/recorder'
 
-</script>
-export default {
- name: 'recorder',
- 
- data(){
-  return {
-   recorderManager
-  }
- },
- 
- mounted(){
-  this.waveCanvas = this.$refs.wave
-  this.recorderManager = new GetRecorderManager(this.$refs.wave)
-  this.recorderManager.getUserMediaPermission()
-  this.recorderManager.onError = (error) => {
-    console.log('onError', error);
-  }
-  this.recorderManager.onSuccess = (result) => {
-    console.log('onSuccess', result);
-  }
-  this.recorderManager.onStart = (event) => {
-    console.log('ondataavailable', event);
-  }
-  this.recorderManager.onStop = (event) => {
-    console.log('ondataavailable', event);
+<script>
+ import {
+   GetRecorderManager
+ } from '@/utils/recorder'
+ export default {
+  name: 'recorder',
+
+  data(){
+   return {
+    recorderManager
+   }
   },
-  
-  methods:{
-   start() {
-     this.recorderManager.start()
+
+  mounted(){
+   this.waveCanvas = this.$refs.wave
+   this.recorderManager = new GetRecorderManager(this.$refs.wave)
+   this.recorderManager.getUserMediaPermission()
+   this.recorderManager.onError = (error) => {
+     console.log('onError', error);
+   }
+   this.recorderManager.onSuccess = (result) => {
+     console.log('onSuccess', result);
+   }
+   this.recorderManager.onStart = (event) => {
+     console.log('ondataavailable', event);
+   }
+   this.recorderManager.onStop = (event) => {
+     console.log('ondataavailable', event);
    },
-   stop() {
-     this.recorderManager.stop()
-   },
+
+   methods:{
+    start() {
+      this.recorderManager.start()
+    },
+    stop() {
+      this.recorderManager.stop()
+    },
+   }
   }
  }
-}
+</script>
+
 ```
